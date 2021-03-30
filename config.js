@@ -12,8 +12,8 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = '${conn.user.name}'
-global.author = 
+global.packname = ${conn.user.name}
+global.author = ''
 
 global.multiplier = 69 // The higher, The harder levelup
 
