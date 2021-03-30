@@ -32,7 +32,7 @@ ${sortedExp.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.s
     }
   })
 }
-handler.help = ['leaderboard [jumlah user]', 'lb [jumlah user]']
+handler.help = ['leaderboard [number of users]', 'lb [number of users]']
 handler.tags = ['xp']
 handler.command = /^(leaderboard|lb)$/i
 handler.owner = false
