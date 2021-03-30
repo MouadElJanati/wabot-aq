@@ -6,9 +6,9 @@ let handler = async (m, { conn, args }) => {
   }, 'APIKEY')
   conn.sendFile(m.chat, undefined, '', '', m)
 }
-handler.help = [].map(v => v + ' <url>')
+handler.help = [twitter].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^$/i
+handler.command = /^(twitter(dl)?)$/i
 
 module.exports = handler
