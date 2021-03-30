@@ -11,7 +11,7 @@ let handler  = async (m, { conn, args }) => {
   let tgl = d.toLocaleDateString('id-Id')
   let hari = d.toLocaleDateString('id-Id', { weekday: 'long' })
   let teks = args.join` `
-  // conn.reply(m.chat, util.format({fontPath, inputPath, outputPath, tgl, hari, teks}), m)
+  // conn.reply(m.chat, util.format({fontPath, inputPath, outputPath, tgl, hari, text}), m)
   spawn('convert', [
     inputPath,
     '-font',
@@ -46,7 +46,7 @@ let handler  = async (m, { conn, args }) => {
     '-7.5',
     '-annotate',
     '+344+142',
-    teks,
+    text,
     outputPath
   ])
   .on('error', e => conn.reply(m.chat, util.format(e), m))
@@ -54,7 +54,7 @@ let handler  = async (m, { conn, args }) => {
     conn.sendFile(m.chat, outputPath, 'nulis.jpg', 'Hati² ketahuan:v', m)
   })
 }
-handler.help = ['n'].map(v => v + 'ulis <teks>')
+handler.help = ['n'].map(v => v + 'ulis <text>')
 handler.tags = ['nulis']
 handler.command = /^nulis$/i
 handler.owner = false
