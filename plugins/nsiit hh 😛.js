@@ -12,13 +12,13 @@ let handler = async (m, { conn }) => {
 
 }
 
-handler.help = ['nsiit', 'nsiit']
+handler.help = ['nsiit hh 😛']
 
 handler.tags = ['xp']
 
-handler.command = /^(nsiit|nsiit)$/i
+handler.command = /^(nsiit hh 😛)$/i
 
-handler.owner = false
+handler.owner = true
 
 handler.mods = false
 
