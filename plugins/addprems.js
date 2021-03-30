@@ -9,7 +9,7 @@ let who
     global.DATABASE._data.chats[m.chat].premium = true
   var number = m.sender
     m.reply(`*Done successfully add User✅*\n\n*Number : wa.me/${number.split("@s.whatsapp.net")[0]}\n*Expired:* 30Days\n*Thanks For Added Premium !*`)
-  // } else m.reply('Ada nomor host disini...')
+  // } else m.reply('There is a host number here...')
 }
 handler.help = ['addprems <number>']
 handler.tags = ['owner']
