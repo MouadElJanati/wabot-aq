@@ -174,8 +174,8 @@ module.exports = {
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
           if (!isPrems && plugin.limit && global.DATABASE._data.users[m.sender].limit < plugin.limit * 1) {
-            this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
-            continue // Limit habis
+            this.reply(m.chat, `Your limit is up, Please buy via *${usedPrefix}buy*`, m)
+            continue // Limit is up
           }
           try {
             await plugin.call(this, m, {
@@ -211,7 +211,7 @@ module.exports = {
             }
           } finally {
             // m.reply(util.format(_user)) 
-            if (m.limit) m.reply(+ m.limit + ' Limit terpakai')
+            if (m.limit) m.reply(+ m.limit + ' Limit used')
           }
     			break
   	  	}
@@ -298,9 +298,9 @@ module.exports = {
     let chat = global.DATABASE._data.chats[m.key.remoteJid]
     if (chat.delete) return
     await this.reply(m.key.remoteJid, `
-Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
+Detected @${m.participant.split`@`[0]} has deleted the message
 
-Untuk mematikan fitur ini, ketik
+To turn off this feature, type
 *.enable delete*
 `.trim(), m.message, {
       contextInfo: {
