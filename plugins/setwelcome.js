@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, isROwner, isOwner }) => {
     m.reply('Welcome set successfully\n@user (Mention)\n@subject (Group tittle)')
   } else throw 'Where is the text?'
 }
-handler.help = ['setwelcome <teks>']
+handler.help = ['setwelcome <text>']
 handler.tags = ['owner', 'group']
 
 handler.command = /^setwelcome$/i
