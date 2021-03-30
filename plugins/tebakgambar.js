@@ -14,7 +14,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
     let json = await res.json()
     if (!json.status) throw json
     let caption = `
-Timeout *${(timeout / 1000).toFixed(2)} detik*
+Timeout *${(timeout / 1000).toFixed(2)} second*
 Tipe ${usedPrefix}hint for hint
 Bonus: ${poin} XP
     `.trim()
@@ -22,7 +22,7 @@ Bonus: ${poin} XP
       await conn.sendFile(m.chat, json.url, 'tebakgambar.jpg', caption, m),
       json, poin,
       setTimeout(() => {
-        if (conn.tebakgambar[id]) conn.reply(m.chat, `Time's up!\nThe answer is *${json.jawaban}*`, conn.tebakgambar[id][0])
+        if (conn.tebakgambar[id]) conn.reply(m.chat, `Time's up!\nThe answer is *${json.answer}*`, conn.tebakgambar[id][0])
         delete conn.tebakgambar[id]
       }, timeout)
     ]
