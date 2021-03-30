@@ -78,8 +78,8 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     }
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
-╭─「 ${conn.user.name} 」
-│ Hi👋, %name!
+╭───「 Mouad El Janati 」
+│ Hi👋, *${conn.user.name}!*
 │
 │ Remaining *%limit Limit*
 │ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
@@ -90,9 +90,10 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 │
 │ Uptime: *%uptime (%muptime)*
 │ Database: %rtotalreg of %totalreg
-│ Github:
-│ %github
-╰────
+│
+│ *Commands menu :* 👇⬇️👇⬇️👇
+│ 
+╰─────│
 %readmore`
     let header = conn.menu.header || '╭─「 %category 」'
     let body   = conn.menu.body   || '│ • %cmd%islimit'
