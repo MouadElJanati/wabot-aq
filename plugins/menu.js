@@ -79,10 +79,12 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 ╭───「 Mouad El Janati 」
-│ Hi👋, *${conn.user.name}!*
+│ 
+│  Hey👋 wsup🌞
 │
 │ Remaining *%limit Limit*
-│ Level *%level (%exp / %maxexp)* [%xp4levelup XP more is needed to levelup again]
+│ Level *%level (%exp / %maxexp)*
+│ [%xp4levelup XP more is needed to levelup again]
 │ %totalexp XP in Total
 │ 
 │ Date: *%week %weton, %date*
@@ -144,7 +146,7 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 3
+handler.exp = 30
 
 module.exports = handler
 
