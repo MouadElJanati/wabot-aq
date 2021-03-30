@@ -82,7 +82,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 │ Hi👋, *${conn.user.name}!*
 │
 │ Remaining *%limit Limit*
-│ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
+│ Level *%level (%exp / %maxexp)* [%xp4levelup again to levelup]
 │ %totalexp XP in Total
 │ 
 │ Date: *%week %weton, %date*
