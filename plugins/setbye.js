@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, isROwner, isOwner }) => {
     m.reply('Bye set successfully\n@user (Mention)')
   } else throw 'Where is the text?'
 }
-handler.help = ['setbye <teks>']
+handler.help = ['setbye <text>']
 handler.tags = ['owner', 'group']
 
 handler.command = /^setbye$/i
