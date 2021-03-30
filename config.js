@@ -10,11 +10,11 @@ global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.xteam.xyz': '472d4e9b51e89f94'
 }
-{
+
 // Sticker WM
-global.packname = ${conn.user.name}
-global.author = '‎ ‎'
-}
+global.packname = 'Sticker'
+global.author = 'Bot'
+
 global.multiplier = 69 // The higher, The harder levelup
 
 let fs = require('fs')
