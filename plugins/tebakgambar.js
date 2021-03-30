@@ -15,7 +15,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
     if (!json.status) throw json
     let caption = `
 Timeout *${(timeout / 1000).toFixed(2)} second*
-Tipe ${usedPrefix}hint for hint
+Type ${usedPrefix}hint for hint
 Bonus: ${poin} XP
     `.trim()
     conn.tebakgambar[id] = [
