@@ -19,7 +19,7 @@ let handler = async (m, { conn, args }) => {
   for (let { url, type, taken_at } of storylist)
     conn.sendFile(m.chat, url, 'ig' + (type == 'video' ? '.mp4' : '.jpg'), `
 @${username}
-Memposting pada ${new Date(taken_at * 1000).toLocaleDateString('id', dateConfig)}
+Posted at ${new Date(taken_at * 1000).toLocaleDateString('id', dateConfig)}
 `, m)
   throw json.result
 }
