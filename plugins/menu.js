@@ -10,7 +10,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let d = new Date
     let locale = 'id'
     let gmt = new Date(0).getTime() - new Date('1 January 1970').getTime()
-    let weton = ['Pahing', 'Pon','Wage','Kliwon','Legi'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
+    let day = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
@@ -87,7 +87,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 │ [%xp4levelup XP more is needed to levelup again]
 │ %totalexp XP in Total
 │ 
-│ Date: *%week %weton, %date*
+│ Date: *%day, %date*
 │ Time: *%time*
 │
 │ Uptime: *%uptime (%muptime)*
