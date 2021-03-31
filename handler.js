@@ -164,7 +164,7 @@ module.exports = {
             fail('private', m, this)
             continue
           }
-          if (plugin.register == true && _user.registered == false) { // Butuh daftar?
+          if (plugin.register == true && _user.registered == false) { // need s list?
             fail('unreg', m, this)
             continue
           }
