@@ -14,7 +14,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
-      month: 'long',
+      month: 'numeric',
       year: 'numeric'
     })
     let time = d.toLocaleTimeString(locale, {
@@ -80,7 +80,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let before = conn.menu.before || `
 ╭───「 Mouad El Janati 」
 │ 
-│  Hey👋 wsup🌞
+│ Hey👋, ${m.participant}.
 │
 │ Remaining *%limit Limit*
 │ Level *%level (%exp / %maxexp)*
