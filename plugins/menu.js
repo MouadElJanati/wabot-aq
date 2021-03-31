@@ -10,7 +10,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let d = new Date
     let locale = 'id'
     let gmt = new Date(0).getTime() - new Date('1 January 1970').getTime()
-    let day = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
+    let weekday = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
@@ -87,7 +87,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 │ [%xp4levelup XP more is needed to levelup again]
 │ %totalexp XP in Total
 │ 
-│ Date: *%day, %date*
+│ Date: *%weekday, %date*
 │ Time: *%time*
 │
 │ Uptime: *%uptime (%muptime)*
@@ -123,13 +123,13 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
       totalexp: exp,
       xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, time, totalreg, rtotalreg,
+      level, limit, name, weekday, week, date, time, totalreg, rtotalreg,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => ''+replace[name])
     conn.reply(m.chat, text.trim(), m)
   } catch (e) {
-    conn.reply(m.chat, 'Sorry, the menu is in error', m)
+    conn.reply(m.chat, 'Sorry, error with menu\n\n🕵️Fixing...', m)
     throw e
   }
 }
