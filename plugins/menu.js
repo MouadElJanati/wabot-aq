@@ -80,7 +80,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let before = conn.menu.before || `
 ╭───「 Mouad El Janati 」
 │ 
-│ Hey👋,  ${conn.participant}.
+│   Hey there 👋👋,
 │
 │ Remaining *%limit Limit*
 │ Level *%level (%exp / %maxexp)*
