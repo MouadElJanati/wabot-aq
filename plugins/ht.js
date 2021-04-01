@@ -1,18 +1,18 @@
 let handler = async (m, { conn, text }) => {
-  conn.hartatahta = conn.hartatahta ? conn.hartatahta : {}
-  if (m.chat in conn.hartatahta) throw 'Someone is still making\nText of the Throne\nin this chat... wait for it to finish'
-  else conn.hartatahta[m.chat] = true
+  conn.treasureofthethrone = conn.treasureofthethrone ? conn.treasureofthethrone : {}
+  if (m.chat in conn.treasureofthethrone) throw 'Someone is still making\nText of the Throne\nin this chat... wait for it to finish'
+  else conn.treasureofthethrone[m.chat] = true
 ('_Making..._ \n*Please wait for about 1 minute*')
   try {
     let img = await ht(text ? text : ':v')
     conn.sendFile(m.chat, img, 'Treasure of The Throne.png', '*© Nurutomo*\nMade with FFmpeg', m)
   } finally {
-    delete conn.hartatahta[m.chat]
+    delete conn.treasureofthethrone[m.chat]
   }
 }
-handler.help = ['tahta <text>']
+handler.help = ['treasure <text>']
 handler.tags = ['nulis']
-handler.command = /^((harta)?tahta)$/i
+handler.command = /^((treasure)?of the throne)$/i
 handler.limit = true
 
 module.exports = handler
@@ -38,8 +38,8 @@ function ht(text = '') {
     let format = ''
     let layers = [
       `[v:0]scale=${s}${format}[im]`,
-      textArgs('HARTA', 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2-(text_h*${lh})`, w, h) + format + '[top]',
-      textArgs('TAHTA', 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2`, w, h) + format + '[mid]',
+      textArgs('Treasure', 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2-(text_h*${lh})`, w, h) + format + '[top]',
+      textArgs('Of The Throne', 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2`, w, h) + format + '[mid]',
       textArgs(text, 'black', 'white', fsize, font, '(w-text_w)/2', `(h-text_h)/2+(text_h*${lh})`, w, h) + format + '[bot]',
       '[top][mid]blend=all_mode=addition[con]',
       '[con][bot]blend=all_mode=addition[txt]',
@@ -49,7 +49,7 @@ function ht(text = '') {
       '[im][wa]blend=all_mode=multiply:all_opacity=1'
     ]
 
-    let o = 1 * new Date + '_harta_tahta.png'
+    let o = 1 * new Date + '_treasure_of_the_throne.png'
     o = path.join(tmp, o)
     let args = [
       '-y',
