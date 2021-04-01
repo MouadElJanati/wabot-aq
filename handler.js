@@ -62,7 +62,7 @@ module.exports = {
       } catch (e) {
         console.log(e, global.DATABASE.data)
       }
-      if (opts['nyimak']) return
+      if (opts['listen to']) return
       if (!m.fromMe && opts['self']) return
       if (typeof m.text !== 'string') m.text = ''
       if (m.isBaileys) return
