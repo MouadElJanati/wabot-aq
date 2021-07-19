@@ -12,11 +12,11 @@ let handler = async (m, { conn }) => {
 
 }
 
-handler.help = ['hh😛']
+handler.help = ['Unique']
 
 handler.tags = ['xp']
 
-handler.command = /^(hh😛)$/i
+handler.command = /^(Unique)$/i
 
 handler.owner = true
 
