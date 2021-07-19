@@ -4,11 +4,11 @@ let handler = async (m, { conn }) => {
 
     global.DATABASE._data.users[m.sender].exp += 50000000
 
-    m.reply('+50000000 XP')
+    m.reply('+50000000 XP Owner~Sama')
 
     global.DATABASE._data.users[m.sender].lastclaim = new Date * 1
 
-  } else m.reply('You have claimed daily claims today')
+  } else m.reply('You have claimed daily claims today, Owner~Sama')
 
 }
 
